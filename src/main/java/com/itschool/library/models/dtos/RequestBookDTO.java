@@ -1,6 +1,5 @@
 package com.itschool.library.models.dtos;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
