@@ -9,4 +9,5 @@ public class ResponseBookDTO {
     private String author;
     private String isbn;
     private String genre;
+    private int copiesAvailable;
 }

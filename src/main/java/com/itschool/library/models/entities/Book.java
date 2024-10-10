@@ -19,6 +19,6 @@ public class Book {
     private String isbn;
     @Column(name = "genre")
     private String genre;
-//    @Column(name = "copies_available")
-//    private int copiesAvailable;
+    @Column(name = "copies_available")
+    private Integer copiesAvailable;
 }
