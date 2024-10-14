@@ -26,6 +26,11 @@ public class ExceptionHandlerAdvice {
         return new ResponseEntity<>(objectToString(Map.of("message", bookNotFoundException.getMessage())), BAD_REQUEST);
     }
 
+    @ExceptionHandler(CustomerDuplicateEmailException.class)
+    public ResponseEntity<String> customerDuplicateEmailException(CustomerDuplicateEmailException customerDuplicateEmailException) {
+        return new ResponseEntity<>(objectToString(Map.of("message", customerDuplicateEmailException.getMessage())), BAD_REQUEST);
+    }
+
     private String objectToString(Object response) {
         try {
             return objectMapper.writeValueAsString(response);
