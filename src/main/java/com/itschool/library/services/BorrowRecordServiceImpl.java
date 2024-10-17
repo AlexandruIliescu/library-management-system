@@ -9,6 +9,7 @@ import com.itschool.library.models.entities.Customer;
 import com.itschool.library.repositories.BookRepository;
 import com.itschool.library.repositories.BorrowRecordRepository;
 import com.itschool.library.repositories.CustomerRepository;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,7 @@ public class BorrowRecordServiceImpl implements BorrowRecordService {
         this.borrowRecordRepository = borrowRecordRepository;
     }
 
+    @Transactional
     @Override
     public void borrowBook(BorrowRecordDTO borrowRecordDTO) {
         Book book = bookRepository.findById(borrowRecordDTO.getBookId())
