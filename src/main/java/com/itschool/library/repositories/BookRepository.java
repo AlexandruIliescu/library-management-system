@@ -1,6 +1,7 @@
 package com.itschool.library.repositories;
 
 import com.itschool.library.models.entities.Book;
+import com.itschool.library.models.entities.BorrowRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
