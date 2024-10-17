@@ -6,6 +6,8 @@ import com.itschool.library.models.dtos.ResponseBookDTO;
 import com.itschool.library.models.entities.Book;
 import com.itschool.library.repositories.BookRepository;
 import com.itschool.library.services.BookServiceImpl;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,6 +28,11 @@ class BookServiceImplTest {
 
     @InjectMocks
     private BookServiceImpl bookService;
+
+    @AfterAll
+    private void test() {
+        //code goes here
+    }
 
     @Test
     void testCreateBook() {
