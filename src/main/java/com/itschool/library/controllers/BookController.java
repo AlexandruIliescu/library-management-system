@@ -36,12 +36,6 @@ public class BookController {
     }
 
     @Operation(summary = "Get all filtered books by title, author and genre")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Found the books",
-                    content = { @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Book.class)) }),
-            @ApiResponse(responseCode = "404", description = "Books not found",
-                    content = @Content) })
     @GetMapping
     public ResponseEntity<List<ResponseBookDTO>> getBooks(
             @RequestParam(value = "title", required = false) String title,
