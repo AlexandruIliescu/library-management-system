@@ -4,10 +4,10 @@ Build a Library Management System for a small local library. The system should m
 
 ### Features:
 ## Feature 1: Book Management (CRUD)
-Users (library staff) should be able to add new books to the inventory.
-Users should be able to view all available books.
-Users should be able to update book details (e.g., changing the number of available copies after restocking).
-Users should be able to delete a book if there are no copies available and no pending borrows.
+- Users (library staff) should be able to add new books to the inventory.
+- Users should be able to view all available books.
+- Users should be able to update book details (e.g., changing the number of available copies after restocking).
+- Users should be able to delete a book if there are no copies available and no pending borrows.
 
 ## Feature 2: Customer Management (CRUD)
 Users should be able to register new customers by adding their personal information.

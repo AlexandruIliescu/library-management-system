@@ -5,6 +5,7 @@ import com.itschool.library.models.dtos.RequestBookDTO;
 import com.itschool.library.models.dtos.ResponseBookDTO;
 import com.itschool.library.services.BookService;
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBookDTO> createBook(@RequestBody RequestBookDTO requestBookDTO) {
+    public ResponseEntity<ResponseBookDTO> createBook(@Valid @RequestBody RequestBookDTO requestBookDTO) {
         return ResponseEntity.ok(bookService.createBook(requestBookDTO));
     }
 
