@@ -25,7 +25,7 @@ public class ChatGPTServiceImpl implements ChatGPTService {
     public String getChatResponse(String userMessage) {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "Bearer " + "sk-EKemQA3aUkumXmhAUzH29XuqfTDr_hjbAjbZp514U0T3BlbkFJDBQcXrVZMWeqWIHykBWpUZD7XVF7XAZfC6sERvw8YA");
+        headers.set("Authorization", "Bearer " + "");
         headers.set("Content-Type", "application/json");
 
         Map<String, Object> requestBody = Map.of(
