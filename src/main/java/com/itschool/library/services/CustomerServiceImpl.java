@@ -16,19 +16,26 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final ObjectMapper objectMapper;
     private final CustomerRepository customerRepository;
+    private final EmailService emailService;
 
-    public CustomerServiceImpl(ObjectMapper objectMapper, CustomerRepository customerRepository) {
+    public CustomerServiceImpl(ObjectMapper objectMapper,
+                               CustomerRepository customerRepository,
+                               EmailService emailService) {
         this.objectMapper = objectMapper;
         this.customerRepository = customerRepository;
+        this.emailService = emailService;
     }
 
     @Override
     public ResponseCustomerDTO createCustomer(RequestCustomerDTO requestCustomerDTO) {
-        validateEmailAddress(requestCustomerDTO);
+        //validateEmailAddress(requestCustomerDTO);
 
         Customer customerEntity = objectMapper.convertValue(requestCustomerDTO, Customer.class);
         Customer customerEntityResponse = customerRepository.save(customerEntity);
         log.info("Customer with id {} was saved", customerEntityResponse.getId());
+
+        emailService.sendEmail(requestCustomerDTO.getEmail(), "test", "another message asdf asdkfja sdkjfh adskljf haskdjf hakdslj hasdkj");
+        log.info("Welcome email was sent to customer {}", customerEntityResponse.getId());
 
         return objectMapper.convertValue(customerEntityResponse, ResponseCustomerDTO.class);
     }
